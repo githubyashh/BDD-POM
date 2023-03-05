@@ -1,15 +1,19 @@
 package com.qa.factory;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.qa.util.ElementUtil;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
 	public WebDriver driver;
+	private ElementUtil elementUtil = new ElementUtil();
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	
@@ -27,6 +31,7 @@ public class DriverFactory {
 			tlDriver.set(new EdgeDriver());
 		}
 		getDriver().manage().deleteAllCookies();
+		//elementUtil.implicitlyWait();
 		getDriver().manage().window().maximize();
 		return getDriver();
 	}

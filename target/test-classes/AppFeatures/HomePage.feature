@@ -14,5 +14,5 @@ Background:
     When user checks title of the page
     Then page title should be "Automation Exercise"
     And check username of an account
-    Then username should be "Logged in as Yash"
+    Then username should be "Logged in as Yash1"
 

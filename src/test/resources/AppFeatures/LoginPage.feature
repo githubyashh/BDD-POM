@@ -33,5 +33,5 @@ Feature: Login page feature
     And user enters password "givePassword1122"
     And user clicks on login button
     Then user gets title of the page
-    And login page title should be "Automation Exercise1"
+    And login page title should be "Automation Exercise"
 

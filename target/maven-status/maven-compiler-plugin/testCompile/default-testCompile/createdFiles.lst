@@ -1,0 +1,5 @@
+AppHooks\ApplicationHooks.class
+stepdefinations\ProductsPageSteps.class
+stepdefinations\LoginPageSteps.class
+stepdefinations\ProductsDetailPageSteps.class
+stepdefinations\HomePageSteps.class
