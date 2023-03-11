@@ -15,6 +15,9 @@ import io.cucumber.junit.CucumberOptions;
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"timeline:test-output-thread/"
 				}
+		
+		// tags = "@smoke , @Regression, ~@SkipTest"
+		
 	
 		)
 

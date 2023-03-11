@@ -1,5 +1,8 @@
+AppHooks\TestNGHooks.class
 AppHooks\ApplicationHooks.class
+testRunners\ParallelRun.class
 stepdefinations\ProductsPageSteps.class
 stepdefinations\LoginPageSteps.class
 stepdefinations\ProductsDetailPageSteps.class
 stepdefinations\HomePageSteps.class
+testRunners\MyTestRunner.class

@@ -11,9 +11,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<junit.version>4.13.1</junit.version>
-		<cucumber.version>6.9.0</cucumber.version>
+		<cucumber.version>6.10.4</cucumber.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
-		<maven.surefire.version>3.0.0-M5</maven.surefire.version>
+		<maven.surefire.version>2.22.1</maven.surefire.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -22,6 +22,11 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>6.10.4</version>
+</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
@@ -34,6 +39,14 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+<dependency>
+    <groupId>org.junit.vintage</groupId>
+    <artifactId>junit-vintage-engine</artifactId>
+    <version>5.9.2</version>
+    <scope>test</scope>
+</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -102,6 +115,18 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+							<includes>
+								<include>**/MyTestRunner.java</include>
+							</includes>
+							<parallel>methods</parallel>
+							<threadCount>4</threadCount>
+						</configuration>
+			</plugin>-->
 		
 			 <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -116,13 +141,12 @@
 							<includes>
 								<include>**/MyTestRunner.java</include>
 							</includes>
-							<parallel>methods</parallel>
-							<threadCount>4</threadCount>
-							<perCoreThreadCount>true</perCoreThreadCount>
+							
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			
 		</plugins>
 	</build>
 </project>

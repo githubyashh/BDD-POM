@@ -3,6 +3,7 @@ package com.qa.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -20,9 +21,16 @@ public class DriverFactory {
 	public WebDriver initialize(String browser) {
 		System.out.println("Browser is: " + browser);
 		
-		if(browser.equals("Chrome")) {
+		if(browser.contains("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver());
+			ChromeOptions options = new ChromeOptions();
+
+			if(browser.contains("headless")) {
+			options.addArguments("headless");
+			
+			}
+			tlDriver.set(new ChromeDriver(options));
+
 		} else if(browser.equals("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
