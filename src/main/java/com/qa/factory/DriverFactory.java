@@ -7,18 +7,20 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.qa.util.ElementUtil;
+import com.qa.util.CommonMethods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
 	public WebDriver driver;
-	private ElementUtil elementUtil = new ElementUtil();
+	private CommonMethods elementUtil = new CommonMethods();
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	
 	public WebDriver initialize(String browser) {
+		
+		 
 		System.out.println("Browser is: " + browser);
 		
 		if(browser.contains("Chrome")) {

@@ -27,7 +27,7 @@ public class TestNGHooks {
 	
 	@BeforeMethod
 	public void launchBrowser() {
-		String browserName = prop.getProperty("browser");
+		String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.initialize(browserName);
 	}
